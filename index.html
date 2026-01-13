@@ -1,0 +1,250 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-typescript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-elixir.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
+    <title>Code Switcher</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__inner-left">
+                <div class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <h1 class="header__title">Code Switcher</h1>
+            </div>
+            <nav class="header__nav">
+                <a href="#" class="header__link">About</a>
+                <a href="#" class="header__link">Blog</a>
+                <a href="#" class="header__link">Pricing</a>
+                <a href="#" class="header__link">Changelog</a>
+                <a href="#" class="header__link">Templates</a>
+                <a href="#" class="header__link">Docs</a>
+                <a href="#" class="header__link">Discord</a>
+            </nav>
+            <div class="header__auth">
+                <button class="header__button header__button--create">Create Account</button>  
+                <button class="header__button header__button--sign-in">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="container__title">Any language, any framework, always secure</h2>
+        <p class="container__description">Integrate authentication into your APIs effortlessly with just a few lines of code. We offer SDKs for various languages and frameworks, alongside an intuitive REST API with a public OpenAPI specification.</p>
+    <div class="container__buttons">
+        <button class="container__button container__button--get-started">Get Started</button>
+        <button class="container__button container__button--view-docs"><span>Visit the docs <i class="fas fa-arrow-right"></i></span></button>
+    </div>
+    <div class="code-container-bg-blur"></div>
+
+    <div class="code-container">
+        <div class="code-container__tabs">
+            <button class="code-container__tab code-container__tab--active" data-language="typescript">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Typescript
+            </button>
+            <button class="code-container__tab" data-language="python">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Python
+            </button>
+            <button class="code-container__tab" data-language="rust">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Rust
+            </button>
+            <button class="code-container__tab" data-language="golang">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Golang
+            </button>
+            <button class="code-container__tab" data-language="curl">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Curl
+            </button>
+            <button class="code-container__tab" data-language="elixir">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Elixir
+            </button>
+            <button class="code-container__tab" data-language="java">
+                <i class="fab fa-js-square code-container__icon"></i>
+                Java
+            </button>
+        </div>
+        <div class="code-container__content">
+            <div class="copy-icon" onclick="copyCode()" role="button" tabindex="0" aria-label="Copy code to clipboard" title="Copy code to clipboard">
+                <i class="fas fa-copy"></i>
+            </div>
+            <pre class="code-container__code code-container__code--active code-container__code--typescript line-numbers">
+            <code class="language-typescript">
+    import { verifykey } from '@codeswitcher/api';
+
+    const { result, error } = await verifykey({
+        apiID: 'api_1234567890abcdef',
+        key: 'xyz_123',
+    });
+
+    if (error) {
+        console.error('Error verifying key:', error);
+    } else {
+        console.log('Key verification result:', result);
+    }
+
+    // handle result and error accordingly
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--python line-numbers">
+            <code class="language-python">
+    from codeswitcher import verifykey
+
+    result, error = verifykey(
+        apiID='api_1234567890abcdef',
+        key='xyz_123'
+    )
+
+    if error:
+        print('Error verifying key:', error)
+    else:
+        print('Key verification result:', result)
+
+    # handle result and error accordingly
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--rust line-numbers">
+            <code class="language-rust">
+    use codeswitcher::verifykey;
+
+    #[tokio::main]
+    async fn main() {
+         let (result, error) = verifykey("api_1234567890abcdef", "xyz_123").await;
+
+        match error {
+            Some(err) => eprintln!("Error verifying key: {}", err),
+            None => println!("Key verification result: {:?}", result),
+        }
+
+        // handle result and error accordingly
+    }
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--golang line-numbers">
+            <code class="language-go">
+    package main
+
+    import (
+        "fmt"
+        "log"
+
+        "github.com/codeswitcher/api"
+    )
+
+    func main() {
+        result, err := api.VerifyKey("api_1234567890abcdef", "xyz_123")
+        if err != nil {
+            log.Fatalf("Error verifying key: %v", err)
+        }
+        fmt.Printf("Key verification result: %v\n", result)
+
+        // handle result and error accordingly
+    }
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--curl line-numbers">
+            <code class="language-bash">
+    curl -X POST https://api.codeswitcher.com/verifykey \
+    -H "Content-Type: application/json" \
+    -d '{
+        "apiID": "api_1234567890abcdef",
+        "key": "xyz_123"
+    }'
+
+    # handle result and error accordingly
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--elixir line-numbers">
+            <code class="language-elixir">
+    alias CodeSwitcher.API
+
+    {result, error} = API.verify_key(%{
+        api_id: "api_1234567890abcdef",
+        key: "xyz_123"
+    })
+
+    case error do
+        nil -> IO.puts("Key verification result: #{inspect(result)}")
+        _ -> IO.puts("Error verifying key: #{inspect(error)}")
+    end
+
+    # handle result and error accordingly
+            </code>
+            </pre>
+            <pre class="code-container__code code-container__code--java line-numbers">
+            <code class="language-java">
+    import com.codeswitcher.api.CodeSwitcher;
+    import com.codeswitcher.api.VerifyKeyResponse;
+
+    public class Main {
+        public static void main(String[] args) {
+             CodeSwitcher cs = new CodeSwitcher("api_1234567890abcdef");
+             VerifyKeyResponse response = cs.verifyKey("xyz_123");
+
+            if (response.getError() != null) {
+                System.err.println("Error verifying key: " + response.getError());
+            } else {
+                System.out.println("Key verification result: " + response.getResult());
+            }
+
+            // handle result and error accordingly
+        }
+    }
+            </code>
+            </pre>
+        </div>
+    </div>
+    <div class="open-source-section">
+        <h3 class="section-subtitle">oss/acc</h3>
+        <h2 class="section-title">Open-source</h2>
+        <p class="section-description">We believe strongly in the value of open source: our codebase and development process is available to learn from and contribute to.</p>
+        <button class="github-button"><i class="fab fa-github"></i> View on GitHub</button>
+        <div class="gitpulse">
+            <img src="images/gitpulse.svg" alt="GitPulse">
+            <div class="gitpulse__bg"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__inner">
+            <span>C</span>
+            <span>O</span>
+            <span>D</span>
+            <span>E</span>
+            <span>S</span>
+            <span>W</span>
+            <span>I</span>
+            <span>T</span>
+            <span>C</span>
+            <span>H</span>
+        </div>
+    </footer>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/stars.js"></script>
+    <script>
+        document.querySelectorAll('.mobile-menu-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                document.querySelector('.header__nav').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
